@@ -11,6 +11,7 @@
         padding: 0;
         box-sizing: border-box;
     }
+
     body {
         font-family: 'Inter', sans-serif;
         background-color: #f8f9fa;
@@ -18,6 +19,7 @@
         font-size: 16px;
         line-height: 1.6;
     }
+
     header {
         background: linear-gradient(135deg, #800020, #a02040);
         color: white;
@@ -28,6 +30,7 @@
         top: 0;
         z-index: 1000;
     }
+
     nav {
         width: 100%;
         padding: 0 5%;
@@ -35,6 +38,7 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .logo {
         font-family: 'Poppins', sans-serif;
         font-size: 2.2rem;
@@ -42,12 +46,14 @@
         text-decoration: none;
         color: white;
     }
+
     .nav-links {
         display: flex;
         list-style: none;
         gap: 2rem;
         font-family: 'Poppins', sans-serif;
     }
+
     .nav-links a {
         color: white;
         text-decoration: none;
@@ -56,21 +62,25 @@
         font-weight: 500;
         font-size: 1.1rem;
     }
+
     .nav-links a:hover {
         background-color: rgba(255,255,255,0.1);
         color: #ffcccb;
     }
+
     main {
         max-width: 100%;
         padding: 2rem 5%;
         margin-top: 80px; /* Menghindari tabrakan dengan header */
     }
+
     .section {
         margin-bottom: 3rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between; /* Distribute space between cards */
     }
+
     .section h2 {
         color: #800020;
         font-size: 2rem;
@@ -78,13 +88,15 @@
         padding-bottom: 0.5rem;
         margin-bottom: 1.5rem;
     }
+
     .umkm-cards {
         display: flex;
-        gap: 1rem;  /* Mengurangi jarak antar card */
+        gap: 1rem; /* Mengurangi jarak antar card */
         justify-content: center; /* Menjaga agar card berada di tengah */
         flex-wrap: wrap;
         margin-top: 2rem;
     }
+
     .umkm-card {
         background: white;
         border-radius: 10px;
@@ -96,24 +108,29 @@
         transition: transform 0.3s ease;
         margin: 0.5rem; /* Mengurangi jarak antar card */
     }
+
     .umkm-card:hover {
         transform: scale(1.05);
     }
+
     .umkm-card img {
         width: 100%;
         height: auto;
         border-radius: 8px;
         margin-bottom: 1rem;
     }
+
     .umkm-card h3 {
         margin-top: 0.5rem;
         font-size: 1.2rem;
     }
+
     .umkm-card p {
         font-size: 1rem;
         color: #333;
         margin-bottom: 1rem;
     }
+
     .lihat-detail {
         background-color: #800020;
         color: white;
@@ -130,12 +147,48 @@
     .lihat-detail:hover {
         background-color: #a02040;
     }
+
     footer {
         background: #800020;
         color: white;
         text-align: center;
         padding: 2rem 0;
         margin-top: 3rem;
+    }
+
+    /* Responsif untuk perangkat kecil */
+    @media (max-width: 768px) {
+        .nav-links {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .umkm-cards {
+            flex-direction: column; /* Membuat kartu UMKM lebih vertikal pada perangkat kecil */
+            gap: 2rem; /* Menambahkan jarak antar kartu */
+        }
+
+        .umkm-card {
+            max-width: 100%; /* Membuat kartu lebih lebar pada perangkat kecil */
+            margin: 1rem 0; /* Menambahkan jarak antar kartu */
+        }
+
+        .logo {
+            font-size: 1.8rem;
+        }
+
+        .nav-links a {
+            font-size: 1rem; /* Menyesuaikan ukuran font pada perangkat kecil */
+        }
+
+        .section h2 {
+            font-size: 1.6rem;
+        }
+
+        main {
+            padding: 1rem; /* Mengurangi padding pada perangkat kecil */
+        }
     }
   </style>
 </head>

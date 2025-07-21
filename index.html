@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Padukuhan Widoro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    header {
+        background: linear-gradient(135deg, #800020, #a02040);
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    nav {
+        width: 100%;
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+    }
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        font-family: 'Poppins', sans-serif;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .nav-links a:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: #ffcccb;
+    }
+    .hero {
+        background: linear-gradient(rgba(128, 0, 32, 0.6), rgba(128, 0, 32, 0.6)), url('images/widoro.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
+    }
+    .hero-content h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .hero-content p {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    .cta-button {
+        background: white;
+        color: #800020;
+        padding: 1.2rem 2.5rem;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    main {
+        max-width: 100%;
+        padding: 2rem 5%;
+    }
+    .section {
+        margin-bottom: 3rem;
+    }
+    .section h2 {
+        color: #800020;
+        font-size: 2rem;
+        border-bottom: 3px solid #800020;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .data-statistik {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    .data-statistik div {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+        background-color: #f8dede;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .data-statistik h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #800020;
+        margin-bottom: 0.3rem;
+    }
+    .data-statistik p {
+        font-size: 1.25rem;
+        color: #800020;
+    }
+    .umkm-cards {
+        display: flex;
+        gap: 1rem;  /* Mengurangi jarak antar card */
+        justify-content: center; /* Menjaga agar card berada di tengah */
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    .umkm-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        padding: 1rem;
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px; /* Membuat card lebih besar */
+        transition: transform 0.3s ease;
+        margin: 0.5rem; /* Mengurangi jarak antar card */
+    }
+    .umkm-card:hover {
+        transform: scale(1.05);
+    }
+    .umkm-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+    .umkm-card h3 {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+    .umkm-card p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+    .lihat-detail {
+        background-color: #800020;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .selengkapnya {
+        margin-top: 2rem;
+        font-weight: 600;
+        display: inline-block;
+        text-align: center;
+        color: #800020;
+        text-decoration: none;
+    }
+    .selengkapnya:hover {
+        color: #a02040;
+    }
+
+    /* CSS untuk menengah gambar peta */
+    .peta-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%; /* Agar gambar responsif */
+        height: auto; /* Agar tinggi gambar proporsional */
+        border-radius: 8px; /* Agar gambar lebih rapi */
+    }
+
+    /* Styling teks batas wilayah */
+    .batas-wilayah {
+        font-size: 1.25rem;
+        line-height: 1.8; /* Memberikan jarak antar baris agar teks lebih mudah dibaca */
+        text-align: left; /* Agar teks rata kiri */
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0 20px; /* Menambahkan padding kiri dan kanan untuk teks agar tidak terlalu dekat dengan sisi */
+    }
+
+    .batas-wilayah strong {
+        color: #800020;  /* Memberikan warna maroon pada nama arah */
+        font-weight: 600;
+    }
+
+        /* CSS untuk card kegiatan */
+    .kegiatan-cards {
+        display: flex;
+        gap: 1rem;  /* Mengurangi jarak antar card */
+        justify-content: center; /* Menjaga agar card berada di tengah secara horizontal */
+        align-items: center; /* Menjaga agar card berada di tengah secara vertikal */
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .kegiatan-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        padding: 1rem;
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px; /* Membuat card lebih besar */
+        transition: transform 0.3s ease;
+        margin: 0.5rem; /* Mengurangi jarak antar card */
+    }
+
+    .kegiatan-card:hover {
+        transform: scale(1.05);
+    }
+
+    .kegiatan-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    .kegiatan-card h3 {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .kegiatan-card p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .lihat-detail {
+        background-color: #800020;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .selengkapnya {
+        margin-top: 2rem;
+        font-weight: 600;
+        display: inline-block;
+        text-align: center;
+        color: #800020;
+        text-decoration: none;
+    }
+
+    .selengkapnya:hover {
+        color: #a02040;
+    }
+
+    footer {
+        background: #800020;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#home" class="logo">Padukuhan Widoro</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="umkm.html">UMKM</a></li>  <!-- Mengarah ke halaman UMKM -->
+        <li><a href="kegiatan.html">Kegiatan</a></li> <!-- Mengarah ke halaman Kegiatan -->
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Selamat Datang di Padukuhan Widoro</h1>
+      <p>Kalurahan Bangunharjo, Kapanewon Sewon, Kabupaten Bantul, D.I. Yogyakarta</p>
+      <a href="#profil" class="cta-button">Jelajahi Profil Padukuhan</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="profil" class="section">
+      <h2>Profil Padukuhan Widoro</h2>
+      <p style="font-size: 1.25rem;">Padukuhan Widoro terletak di Kalurahan Bangunharjo, Kapanewon Sewon, Kabupaten Bantul. Terkenal dengan lingkungan yang asri, masyarakat yang ramah dan semangat gotong royong yang tinggi. Padukuhan ini terdiri dari 10 RT dengan luas wilayah sekitar 48 hektar dan memiliki potensi budaya serta kegiatan sosial yang kuat.</p>
+      <div class="data-statistik">
+        <div>
+          <h3>10</h3>
+          <p>Jumlah RT</p>
+        </div>
+        <div>
+          <h3>± 48 Ha</h3>
+          <p>Luas Wilayah</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="umkm" class="section">
+      <h2>UMKM Padukuhan Widoro</h2>
+      <div class="umkm-cards">
+        <div class="umkm-card">
+          <h3>Batik Gusti</h3>
+          <img src="images/widoro.png" alt="Batik Gusti">
+          <p>Alamat: RT 00, Padukuhan Widoro</p>
+          <a href="umkm.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="umkm-card">
+          <h3>Wedang Uwuh Bejo</h3>
+          <img src="images/widoro.png" alt="Wedang Uwuh Bejo">
+          <p>Alamat: RT 00, Padukuhan Widoro</p>
+          <a href="umkm.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="umkm-card">
+          <h3>Bakpia Shafira</h3>
+          <img src="images/widoro.png" alt="Bakpia Shafira">
+          <p>Alamat: RT 00, Padukuhan Widoro</p>
+          <a href="umkm.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="umkm-card">
+          <h3>Tahu Murni HKM</h3>
+          <img src="images/widoro.png" alt="Tahu Murni HKM">
+          <p>Alamat: RT 00, Padukuhan Widoro</p>
+          <a href="umkm.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+      </div>
+      <a href="umkm.html" class="selengkapnya">Selengkapnya</a>
+    </section>
+
+    <section id="peta" class="section">
+      <h2>Peta Padukuhan</h2>
+      <img src="images/peta-widoro.jpg" alt="Peta Padukuhan" class="peta-img">
+      <p class="batas-wilayah">Batas wilayah dusun :
+        <br><strong>Selatan :</strong> Padukuhan Cangkringmalang Kalurahan Timbulharjo
+        <br><strong>Timur :</strong> Padukuhan Dobalan Kalurahan Timbulharjo, Padukuhan Gatak Kalurahan Bangunharjo
+        <br><strong>Utara :</strong> Padukuhan Gatak Kalurahan Bangunharjo, Padukuhan Mredo Kalurahan Bangunharjo
+        <br><strong>Barat :</strong> Padukuhan Garon Kalurahan Panggungharjo
+      </p>
+    </section>
+
+    <section id="Kegiatan" class="section">
+      <h2>Kegiatan Padukuhan Widoro</h2>
+      <div class="kegiatan-cards">
+        <div class="kegiatan-card">
+          <h3>Posyandu</h3>
+          <img src="images/widoro.png" alt="Kegiatan A">
+          <p>Kegiatan posyandu ini dilaksanakan setiap satu bulan sekali di tanggal 5. Diikuti balita, dewasa, dan usia lanjut.</p>
+          <a href="kegiatan.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="kegiatan-card">
+          <h3>Bank Sampah</h3>
+          <img src="images/widoro.png" alt="Kegiatan B">
+          <p>Masyarakat dapat menyetorkan sampah yang sudah dipilah, seperti plastik ke bank sampah untuk ditukar dengan uang.</p>
+          <a href="kegiatan.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="kegiatan-card">
+          <h3>Arisan PKK</h3>
+          <img src="images/widoro.png" alt="Kegiatan C">
+          <p>Arisan PKK merupakan kegiatan rutin ibu - ibu PKK yang dilaksanakan setiap satu bulan sekali.</p>
+          <a href="kegiatan.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+        <div class="kegiatan-card">
+          <h3>TPQ Madin</h3>
+          <img src="images/widoro.png" alt="Kegiatan C">
+          <p>TPQ Madin merupakan lembaga pendidikan non-formal yang fokus pada pengajaran ilmu agama Islam. </p>
+          <a href="kegiatan.html" class="lihat-detail">Lihat Detail</a>
+        </div>
+      </div>
+      <a href="kegiatan.html" class="selengkapnya">Selengkapnya</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KKN AB.83.139. Semua hak dilindungi.</p>
+  </footer>
+</body>
+</html>
